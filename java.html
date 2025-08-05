@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java - Arrowwlee</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1E1E1E;
+            color: #D4D4D4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #252526;
+            animation: fadeIn 1s ease-in-out;
+        }
+        header img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            color: #569CD6;
+            font-size: 2em;
+        }
+        main {
+            padding: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        h2 {
+            color: #00FF00;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        section {
+            background-color: #252526;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        section h3 {
+            color: #569CD6;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        section h4 {
+            color: #00FF00;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #1E1E1E;
+            color: #00FF00;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #252526;
+            color: #D4D4D4;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between; padding: 10px;">
+        <a href="index.html" style="background-color: #569CD6; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Ir al Inicio</a>
+        <a href="python.html" style="background-color: #00FF00; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Ir a Python</a>
+    </div>
+    <header>
+        <img src="imagenes/java.jpg" alt="Logo de Java">
+        <h1>Aprende sobre Java</h1>
+    </header>
+    <main>
+        <h2>Fundamentos de Programación en Java</h2>
+        <section>
+            <h3>Introducción a Java</h3>
+            <ul>
+                <li>Lenguajes de programación: Idiomas artificiales para expresar cálculos y procesos ejecutados por ordenadores.</li>
+                <li>Algoritmos: Conjunto ordenado y finito de operaciones para resolver un problema.</li>
+                <li>Java: Lenguaje orientado a objetos desarrollado por Sun Microsystems (ahora Oracle), destacado por su portabilidad ("Write Once, Run Anywhere").</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Plataforma Java</h3>
+            <ul>
+                <li>Bytecode: Lenguaje intermedio al que se compila el código Java.</li>
+                <li>JRE (Java Runtime Environment): Entorno de ejecución que incluye la JVM (Java Virtual Machine).</li>
+                <li>JDK (Java Development Kit): Conjunto de herramientas para desarrollar aplicaciones Java.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Proceso de desarrollo</h3>
+            <ul>
+                <li>Edición: Escritura del código fuente en un archivo .java.</li>
+                <li>Compilación: Conversión del código fuente a Bytecode (archivo .class).</li>
+                <li>Ejecución: Interpretación del Bytecode por la JVM.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Estilo de programación</h3>
+            <ul>
+                <li>Legibilidad: Código claro y fácil de entender.</li>
+                <li>Corrección: El programa debe cumplir con los requisitos especificados.</li>
+                <li>Eficiencia: Optimización de recursos (tiempo y memoria).</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Estructura del Programa</h2>
+            <p style="color: #D4D4D4;">Un Programa típico de Java se compone de una o más clases. Cada clase puede contener métodos y variables. Aquí tienes un ejemplo básico:</p>
+            <pre>
+                <code>
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("Hola, Mundo!");
+    }
+}
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>Estructura de un programa Java</h3>
+            <h4>Elementos básicos</h4>
+            <ul>
+                <li><strong>Comentarios</strong>
+                    <ul>
+                        <li><code>/* ... */</code> (bloque)</li>
+                        <li><code>/** ... */</code> (documentación)</li>
+                        <li><code>//</code> (línea)</li>
+                    </ul>
+                </li>
+                <li><strong>Identificadores</strong>
+                    <ul>
+                        <li>Nombres de variables, métodos y clases. Reglas:</li>
+                        <li>Comienzan con letra o <code>_</code>.</li>
+                        <li>Distingue mayúsculas/minúsculas.</li>
+                        <li>No pueden ser palabras reservadas.</li>
+                    </ul>
+                </li>
+                <li><strong>Variables</strong>
+                    <ul>
+                        <li><strong>Declaración</strong>: <code>tipo nombre;</code> (ej. <code>int edad;</code>).</li>
+                        <li><strong>Tipos primitivos</strong>: <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>char</code>, <code>boolean</code>.</li>
+                        <li><strong>Literales</strong>: Representación de valores (ej. <code>10</code>, <code>3.14</code>, <code>'A'</code>, <code>"Hola"</code>).</li>
+                    </ul>
+                </li>
+                <li><strong>Operadores</strong>
+                    <ul>
+                        <li><strong>Aritméticos</strong>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>.</li>
+                        <li><strong>Relacionales</strong>: <code>></code>, <code><</code>, <code>==</code>.</li>
+                        <li><strong>Lógicos</strong>: <code>&&</code>, <code>||</code>, <code>!</code>.</li>
+                    </ul>
+                </li>
+                <li><strong>Expresiones</strong>
+                    <ul>
+                        <li>Combinaciones de operadores y valores (ej. <code>(a + b) * c</code>).</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Ejemplo básico</h4>
+            <pre>
+                <code>
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }
+}
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>Clases y objetos</h3>
+            <h4>Definiciones</h4>
+            <ul>
+                <li>Clase: Plantilla que define atributos y métodos de un objeto.</li>
+                <li>Objeto: Instancia de una clase con estado (valores de atributos) y comportamiento (métodos).</li>
+            </ul>
+            <h4>Elementos de una clase</h4>
+            <ul>
+                <li>Atributos: Variables que almacenan el estado del objeto.
+                    <pre>
+                        <code>
+public class Vehiculo {
+    private String matricula;
+    private String marca;
+}
+                        </code>
+                    </pre>
+                </li>
+                <li>Métodos: Funciones que definen el comportamiento.
+                    <pre>
+                        <code>
+public String getMarca() {
+    return this.marca;
+}
+                        </code>
+                    </pre>
+                </li>
+                <li>Constructores: Métodos especiales para inicializar objetos.
+                    <pre>
+                        <code>
+public Vehiculo(String matricula, String marca) {
+    this.matricula = matricula;
+    this.marca = marca;
+}
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+            <h4>Ejemplo de objeto</h4>
+            <pre>
+                <code>
+Vehiculo miCoche = new Vehiculo("1234ABC", "Toyota");
+System.out.println(miCoche.getMarca()); // Salida: Toyota
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>Extensión de clases</h3>
+            <h4>Herencia</h4>
+            <ul>
+                <li>Superclase/subclase: Una clase hereda atributos y métodos de otra.
+                    <pre>
+                        <code>
+public class Turismo extends Vehiculo {
+    private int puertas;
+}
+                        </code>
+                    </pre>
+                </li>
+                <li>Polimorfismo: Un objeto puede tomar muchas formas (ej. un Turismo es un Vehículo).</li>
+            </ul>
+            <h4>Composición</h4>
+            <ul>
+                <li>Una clase contiene objetos de otras clases.
+                    <pre>
+                        <code>
+public class VehiculoAlquilado {
+    private Cliente cliente;
+    private Vehiculo vehiculo;
+}
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Estructuras de control</h3>
+            <h4>Selección</h4>
+            <ul>
+                <li><code>if-else</code>: Ejecuta bloques según una condición.
+                    <pre>
+                        <code>
+if (edad >= 18) {
+    System.out.println("Mayor de edad");
+} else {
+    System.out.println("Menor de edad");
+}
+                        </code>
+                    </pre>
+                </li>
+                <li><code>switch</code>: Selección múltiple.
+                    <pre>
+                        <code>
+switch (dia) {
+    case 1: System.out.println("Lunes"); break;
+    default: System.out.println("Otro día");
+}
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+            <h4>Repetición</h4>
+            <ul>
+                <li><code>while</code>: Repite mientras la condición sea verdadera.
+                    <pre>
+                        <code>
+while (i < 10) {
+    System.out.println(i);
+    i++;
+}
+                        </code>
+                    </pre>
+                </li>
+                <li><code>for</code>: Repite un número conocido de veces.
+                    <pre>
+                        <code>
+for (int i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Estructuras de almacenamiento</h3>
+            <h4>Arrays</h4>
+            <ul>
+                <li>Declaración:
+                    <pre>
+                        <code>
+int[] numeros = new int[5];
+String[] nombres = {"Ana", "Juan"};
+                        </code>
+                    </pre>
+                </li>
+                <li>Acceso:
+                    <pre>
+                        <code>
+System.out.println(numeros[0]); // Primer elemento
+                        </code>
+                    </pre>
+                </li>
+                <li>Arrays multidimensionales:
+                    <pre>
+                        <code>
+int[][] matriz = {{1, 2}, {3, 4}};
+System.out.println(matriz[0][1]); // Salida: 2
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <div style="display: flex; justify-content: space-between; padding: 10px;">
+        <a href="index.html" style="background-color: #569CD6; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Ir al Inicio</a>
+        <a href="python.html" style="background-color: #00FF00; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Ir a Python</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Arrowwlee. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
