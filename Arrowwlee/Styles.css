@@ -1,0 +1,79 @@
+body {
+    font-family: 'Ubuntu Mono', monospace; /* Fuente estilo Linux */
+    background-color: #1E1E1E; /* Fondo oscuro estilo editor de código */
+    color: #00FF00; /* Verde estilo hacker */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #00FF00; /* Verde estilo hacker */
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px;
+    color: #00FF00; /* Verde estilo hacker */
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Estilo para las columnas */
+.column {
+    width: 45%;
+    text-align: center;
+    background-color: #252526; /* Fondo oscuro estilo editor de código */
+    padding: 20px;
+    border: 1px solid #569CD6; /* Azul estilo programación */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(86, 156, 214, 0.5); /* Sombra estilo programación */
+}
+
+/* Estilo para las imágenes */
+.column img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #1414d1; /* Borde azul estilo programación */
+}
+
+/* Estilo para los botones */
+.column button {
+    background-color: #1414d1; /* Azul estilo programación */
+    color: #ffffff; /* Verde estilo hacker */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.column button:hover {
+    background-color: #005A9E; /* Azul más oscuro estilo programación */
+}
+
+/* Estilo para el fondo animado */
+#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar detrás del contenido principal */
+}
+
+/* Estilo para el efecto de escritura */
+#title {
+    font-size: 36px;
+    color: #00FF00; /* Verde estilo hacker */
+    text-align: center;
+    margin-top: 20px;
+}
