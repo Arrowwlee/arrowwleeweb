@@ -11,11 +11,84 @@ h1 {
     text-align: center;
 }
 
+/* Efectos especiales para títulos dentro de columnas */
+.column h2 {
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.column:hover h2 {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+.column#java:hover h2 {
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
+}
+
+.column#python:hover h2 {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
 p {
     font-size: 18px;
     line-height: 1.6;
     margin: 20px;
     color: #00FF00; /* Verde estilo hacker */
+}
+
+/* Estilo para el contenedor del header */
+.header-container {
+    background-color: #252526; /* Fondo oscuro estilo editor de código */
+    padding: 30px 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 12px;
+    border: 1px solid #569CD6; /* Azul estilo programación */
+    box-shadow: 0 6px 20px rgba(86, 156, 214, 0.3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de borde brillante sutil (sin hover) */
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(86, 156, 214, 0.1) 50%, 
+        transparent 70%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Asegurar que el contenido esté por encima */
+.header-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajustar el título dentro del contenedor */
+.header-container h1 {
+    margin: 0 0 20px 0;
+    font-size: 36px;
+    color: #00FF00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Ajustar el párrafo dentro del contenedor */
+.header-container p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #D4D4D4; /* Color más suave para la descripción */
+    text-shadow: 0 0 5px rgba(212, 212, 212, 0.3);
 }
 
 /* Estilo para el contenedor principal */
@@ -34,6 +107,79 @@ p {
     border: 1px solid #569CD6; /* Azul estilo programación */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(86, 156, 214, 0.5); /* Sombra estilo programación */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto de brillo interno para las columnas */
+.column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(86, 156, 214, 0.2), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+/* Efectos hover para las columnas */
+.column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+    border: 2px solid #00FF00;
+    background-color: #2a2a2b;
+}
+
+/* Activar brillo al hover */
+.column:hover::before {
+    left: 100%;
+}
+
+/* Efecto especial para la columna de Java */
+.column#java:hover {
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    border: 2px solid #FF6B35;
+}
+
+.column#java::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.2), transparent);
+}
+
+/* Efecto especial para la columna de Python */
+.column#python:hover {
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    border: 2px solid #FFD700;
+}
+
+.column#python::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+}
+
+/* Asegurar que el contenido esté por encima del efecto */
+.column > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animación pulsante sutil para las columnas */
+@keyframes columnPulse {
+    0% {
+        box-shadow: 0 4px 6px rgba(86, 156, 214, 0.5);
+    }
+    50% {
+        box-shadow: 0 4px 10px rgba(86, 156, 214, 0.7);
+    }
+    100% {
+        box-shadow: 0 4px 6px rgba(86, 156, 214, 0.5);
+    }
+}
+
+.column {
+    animation: columnPulse 4s infinite;
 }
 
 /* Estilo para las imágenes */
@@ -43,6 +189,27 @@ p {
     object-fit: cover;
     margin-bottom: 15px;
     border: 2px solid #1414d1; /* Borde azul estilo programación */
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Efectos hover para las imágenes */
+.column:hover img {
+    transform: scale(1.05);
+    border-color: #00FF00;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+}
+
+/* Efecto específico para imagen de Java */
+.column#java:hover img {
+    border-color: #FF6B35;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+/* Efecto específico para imagen de Python */
+.column#python:hover img {
+    border-color: #FFD700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 /* Estilo para los botones */
@@ -50,14 +217,67 @@ p {
     background-color: #1414d1; /* Azul estilo programación */
     color: #ffffff; /* Verde estilo hacker */
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(20, 20, 209, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Efecto de brillo interno */
+.column button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
 .column button:hover {
-    background-color: #005A9E; /* Azul más oscuro estilo programación */
+    background-color: #005A9E;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+    color: #00FF00;
+    border: 2px solid #00FF00;
+}
+
+/* Animación de brillo al hover */
+.column button:hover::before {
+    left: 100%;
+}
+
+/* Efecto al hacer clic */
+.column button:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.6);
+    background-color: #00FF00;
+    color: #000000;
+}
+
+/* Animación pulsante opcional */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(20, 20, 209, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(0, 255, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(20, 20, 209, 0.3);
+    }
+}
+
+.column button {
+    animation: pulse 3s infinite;
 }
 
 /* Estilo para el fondo animado */
@@ -76,4 +296,163 @@ p {
     color: #00FF00; /* Verde estilo hacker */
     text-align: center;
     margin-top: 20px;
+}
+
+/* === RESPONSIVE DESIGN PARA MÓVILES === */
+
+/* Tablet y móviles grandes (768px y menos) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    #title {
+        font-size: 28px;
+        margin: 15px 0;
+    }
+    
+    .header-container {
+        padding: 25px 15px;
+        margin: 15px auto;
+        max-width: 95%;
+    }
+    
+    .header-container h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .header-container p {
+        font-size: 16px;
+    }
+    
+    p {
+        font-size: 16px;
+        margin: 15px;
+    }
+    
+    .column img {
+        height: 150px;
+    }
+    
+    .column button, .nav-button {
+        padding: 14px 20px;
+        font-size: 16px;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Móviles pequeños (480px y menos) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    #title {
+        font-size: 24px;
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+    
+    .header-container {
+        padding: 20px 10px;
+        margin: 10px auto;
+        max-width: 98%;
+    }
+    
+    .header-container h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .header-container p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    p {
+        font-size: 14px;
+        margin: 10px;
+        line-height: 1.4;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .column {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .column h2 {
+        font-size: 1.3em;
+    }
+    
+    .column img {
+        height: 120px;
+        margin-bottom: 10px;
+    }
+    
+    .column button, .nav-button {
+        padding: 12px 16px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Ajustar el efecto Matrix para móviles */
+    #backgroundCanvas {
+        opacity: 0.3; /* Menos intenso en móviles */
+    }
+}
+
+/* Móviles muy pequeños (320px y menos) */
+@media screen and (max-width: 320px) {
+    #title {
+        font-size: 20px;
+        padding: 0 5px;
+    }
+    
+    .header-container {
+        padding: 15px 8px;
+        margin: 8px auto;
+    }
+    
+    .header-container h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .header-container p {
+        font-size: 13px;
+    }
+    
+    .container {
+        padding: 5px;
+    }
+    
+    .column {
+        padding: 10px;
+    }
+    
+    .column h2 {
+        font-size: 1.2em;
+    }
+    
+    .column p {
+        font-size: 13px;
+    }
+    
+    .column button, .nav-button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
 }
