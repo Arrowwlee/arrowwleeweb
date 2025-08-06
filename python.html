@@ -94,6 +94,80 @@
             background-color: #00FF00;
             color: black;
         }
+
+        /* Estilos mejorados para botones de navegación */
+        .nav-button {
+            background-color: #1414d1;
+            color: #ffffff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(20, 20, 209, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            animation: pulse 3s infinite;
+        }
+
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-button:hover {
+            background-color: #005A9E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+            color: #00FF00;
+            border: 2px solid #00FF00;
+        }
+
+        .nav-button:hover::before {
+            left: 100%;
+        }
+
+        .nav-button:active {
+            transform: translateY(0px) scale(0.98);
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.6);
+            background-color: #00FF00;
+            color: #000000;
+        }
+
+        .nav-button.java-btn {
+            background-color: #FF6B35;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .nav-button.java-btn:hover {
+            background-color: #E55100;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 15px rgba(20, 20, 209, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(0, 255, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 4px 15px rgba(20, 20, 209, 0.3);
+            }
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -112,6 +186,92 @@
                 opacity: 1;
             }
         }
+
+        /* === RESPONSIVE DESIGN === */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            
+            header img {
+                width: 120px;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            section h3 {
+                font-size: 1.3em;
+            }
+            
+            section h4 {
+                font-size: 1.1em;
+            }
+            
+            pre {
+                font-size: 12px;
+                padding: 8px;
+                overflow-x: auto;
+            }
+            
+            .nav-button {
+                padding: 10px 16px;
+                font-size: 14px;
+                margin: 5px;
+            }
+            
+            .navigation {
+                padding: 10px;
+                gap: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+            
+            header h1 {
+                font-size: 1.3em;
+            }
+            
+            header img {
+                width: 100px;
+            }
+            
+            main {
+                padding: 10px;
+            }
+            
+            section {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            pre {
+                font-size: 11px;
+                padding: 6px;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -120,8 +280,8 @@
         <h1>Aprende Python</h1>
     </header>
     <div class="navigation">
-        <a href="index.html">Ir al Inicio</a>
-        <a href="java.html">Ir a Java</a>
+        <a href="index.html" class="nav-button">Ir al Inicio</a>
+        <a href="java.html" class="nav-button java-btn">Ir a Java</a>
     </div>
     <main>
         <section>
@@ -248,8 +408,8 @@ print("¡Aprende Python y crea algo increíble!")
         </section>
     </main>
     <div class="navigation">
-        <a href="index.html">Ir al Inicio</a>
-        <a href="java.html">Ir a Java</a>
+        <a href="index.html" class="nav-button">Ir al Inicio</a>
+        <a href="java.html" class="nav-button java-btn">Ir a Java</a>
     </div>
     <footer>
         <p>&copy; 2025 Arrowwlee. Todos los derechos reservados.</p>
